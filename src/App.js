@@ -1,23 +1,32 @@
+import { useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import Navigator from './Navigation/Navigator';
+import { v4 as uuidv4 } from 'uuid';
+
 
 function App() {
+
+  const [user, setUser] = useState([{
+    name: 'Selorm',
+    occupation: 'Engineer',
+    age: 21,
+    id: uuidv4()
+  },
+  {
+    name: 'Dwayne',
+    occupation: 'Developer',
+    age: 22,
+    id: uuidv4()
+  }])
+
+  const addUser = (users) => {
+    let newUser = { ...users, id: uuidv4() }
+    setUser([...user, newUser])
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigator userData={user} addUser={addUser} />
     </div>
   );
 }
