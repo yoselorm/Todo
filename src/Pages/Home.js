@@ -2,7 +2,7 @@ import React from 'react';
 import UserCard from '../Components/UserCard';
 
 const Home = (props) => {
-    console.log(props)
+
 
     return (
         <div>
@@ -10,7 +10,7 @@ const Home = (props) => {
             {props.userData.map((users) => {
                 return (
                     <div key={users.id}>
-                        <UserCard data={users} />
+                        <UserCard users={users} delete={props.delete} edit={props.edit} />
                     </div>
                 )
             })}

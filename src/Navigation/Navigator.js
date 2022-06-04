@@ -10,7 +10,7 @@ const Navigator = (props) => {
             <BrowserRouter>
                 <NavBar />
                 <Routes>
-                    <Route path='/' element={<Home userData={props.userData} />} />
+                    <Route path='/' element={<Home userData={props.userData} delete={props.delete} edit={props.edit} />} />
                     <Route path='/signup' element={<SignUp addUser={props.addUser} />} />
                 </Routes>
             </BrowserRouter>

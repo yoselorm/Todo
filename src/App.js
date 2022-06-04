@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import logo from './logo.svg';
-//import './App.css';
+import './App.css';
 import Navigator from './Navigation/Navigator';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -8,15 +8,11 @@ import { v4 as uuidv4 } from 'uuid';
 function App() {
 
   const [user, setUser] = useState([{
-    name: 'Selorm',
-    occupation: 'Engineer',
-    age: 21,
+    name: 'Meeting at 5',
     id: uuidv4()
   },
   {
-    name: 'Dwayne',
-    occupation: 'Developer',
-    age: 22,
+    name: 'Lunch at 2',
     id: uuidv4()
   }])
 
@@ -24,9 +20,20 @@ function App() {
     let newUser = { ...users, id: uuidv4() }
     setUser([...user, newUser])
   }
+
+  const deleteUser = (id) => {
+    const newUsers = user.filter((person) => person.id !== id)
+    setUser(newUsers)
+  }
+
+  const editUser = (id, modPerson) => {
+    const newUsers = user.map((users) => users.id === id ? modPerson : users)
+    setUser(newUsers)
+  }
+
   return (
     <div className="App">
-      <Navigator userData={user} addUser={addUser} />
+      <Navigator userData={user} addUser={addUser} delete={deleteUser} edit={editUser} />
     </div>
   );
 }
