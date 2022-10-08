@@ -16,7 +16,7 @@ const UserCard = (props) => {
     }
     return (
         <div >
-            <Container>
+            <Container >
                 <br />
                 <Card style={{ width: '35rem' }} className='card'>
                     <Card.Body className='content'>

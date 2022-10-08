@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Container, Form, Button, Card } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 
 const CreateForm = (props) => {
-
+    const navigate = useNavigate();
     const [name, setName] = useState('');
 
     const handleSubmit = (e) => {
@@ -15,9 +16,9 @@ const CreateForm = (props) => {
         props.addUser(newUser);
 
         setName('');
+        navigate('/')
 
-
-        alert('Added successfully')
+        // alert('Added successfully')
     }
 
     return (

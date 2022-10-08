@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Form, Card } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 
 const ModalEdit = (props) => {
+
+    const navigate = useNavigate();
     const [name, setName] = useState(props.data.name);
     const handlesubmit = (e) => {
         e.preventDefault();
@@ -12,6 +15,7 @@ const ModalEdit = (props) => {
         }
         props.edit(props.data.id, modData)
         setName("");
+
     }
     return (
         <div>

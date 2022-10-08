@@ -5,6 +5,7 @@
 
 
 
+
 .addcard {
   margin: auto;
 }
@@ -22,4 +23,18 @@
 
 .buttonn {
   margin-left: 8px;
+}
+
+.App {
+  background-color: #C6EBC5;
+  height: 100vh;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.text {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 2rem;
+  font-weight: 500;
 }

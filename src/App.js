@@ -33,6 +33,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 className='text'>Note App</h1>
       <Navigator userData={user} addUser={addUser} delete={deleteUser} edit={editUser} />
     </div>
   );
